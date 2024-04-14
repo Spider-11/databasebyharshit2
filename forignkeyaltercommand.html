@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>FOREIGN KEY USING ALTER COMMAND</h2>
+    </div>
+
+<pre>
+mysql> alter table employees add foreign key(deptno) references dept(deptno);
+Query OK, 13 rows affected (0.15 sec)
+Records: 13  Duplicates: 0  Warnings: 0
+
+mysql> desc employees;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empno    | int         | YES  |     | NULL    |       |
+| empname  | varchar(50) | YES  |     | NULL    |       |
+| job      | varchar(50) | YES  |     | NULL    |       |
+| mgr      | int         | YES  |     | NULL    |       |
+| hiredate | date        | YES  |     | NULL    |       |
+| salary   | int         | YES  |     | NULL    |       |
+| deptno   | int         | YES  | MUL | NULL    |       |
+| age      | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+</pre>
+<h3>USING CONSTRAINT </h3>
+<pre>
+mysql> alter table emp add constraint FK_dept foreign key(deptno) references dept(deptno);
+Query OK, 10 rows affected (0.14 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| empno    | int           | NO   |     | NULL    |       |
+| name     | varchar(100)  | YES  |     | NULL    |       |
+| job      | varchar(100)  | YES  |     | NULL    |       |
+| mgr      | int           | YES  |     | NULL    |       |
+| hiredate | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| deptno   | int           | YES  | MUL | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql>
+
+</pre>
+
+</body>
+</html>

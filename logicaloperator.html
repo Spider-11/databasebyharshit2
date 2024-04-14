@@ -1,0 +1,94 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>LOGICAL OPERATORs</h2>
+    </div>
+
+<pre>
+<h3> AND OPERATORS </h3>
+mysql> select * from employees where deptno =10 and salary>7000;
++-------+-----------------+---------+------+------------+--------+--------+------+
+| empno | empname         | job     | mgr  | hiredate   | salary | deptno | age  |
++-------+-----------------+---------+------+------------+--------+--------+------+
+|     1 | John Doe        | Manager | NULL | 2023-01-15 |  14000 |     10 |   35 |
+|     1 | John Doe        | Manager | NULL | 2024-04-10 |  14000 |     10 |   35 |
+|     3 | Michael Johnson | Analyst |    1 | 2024-04-10 |  55000 |     10 |   32 |
++-------+-----------------+---------+------+------------+--------+--------+------+
+3 rows in set (0.08 sec)
+
+<h3>OR OPERATOR</h3>
+mysql> select * from employees where deptno=10 or salary>7000;
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+| empno | empname         | job               | mgr  | hiredate   | salary | deptno | age  |
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+|     1 | John Doe        | Manager           | NULL | 2023-01-15 |  14000 |     10 |   35 |
+|     2 | Jane Smith      | Assistant Manager |    1 | 2023-02-20 |   4000 |     10 |   30 |
+|     1 | John Doe        | Manager           | NULL | 2024-04-10 |  14000 |     10 |   35 |
+|     2 | Jane Smith      | Developer         |    1 | 2024-04-10 |  50000 |     20 |   30 |
+|     3 | Michael Johnson | Analyst           |    1 | 2024-04-10 |  55000 |     10 |   32 |
+|     4 | Emily Brown     | Designer          |    1 | 2024-04-10 |  48000 |     20 |   28 |
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+6 rows in set (0.00 sec)
+
+<h3> NOT OPERATOR</h3>
+mysql> SELECT * FROM employees WHERE NOT deptno = 10;
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+| empno | empname              | job                  | mgr  | hiredate   | salary | deptno | age  |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+|     3 | Michael Johnson      | Sales Representative |    2 | 2023-03-10 |   3000 |     20 |   28 |
+|     4 | Emily Brown          | Sales Representative |    2 | 2023-04-05 |   3000 |     20 |   27 |
+|     5 | William Wilson       | Clerk                |    2 | 2023-05-12 |   2000 |     30 |   25 |
+|     7 | Christopher Martinez | Analyst              |    1 | 2023-07-23 |   4000 |     40 |   32 |
+|     8 | Amanda Taylor        | Analyst              |    1 | 2023-08-30 |   3800 |     40 |   31 |
+|     9 | Olivia Thomas        | Clerk                |    6 | 2023-09-14 |   2100 |     30 |   27 |
+|    10 | Daniel Anderson      | Clerk                |    6 | 2023-10-05 |   3000 |     30 |   29 |
+|     2 | Jane Smith           | Developer            |    1 | 2024-04-10 |  50000 |     20 |   30 |
+|     4 | Emily Brown          | Designer             |    1 | 2024-04-10 |  48000 |     20 |   28 |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+9 rows in set (0.01 sec)
+<h3>IN OPERATORS </h3>
+
+mysql> select * from employees where  empname in("john doe","jane smith");
++-------+------------+-------------------+------+------------+--------+--------+------+
+| empno | empname    | job               | mgr  | hiredate   | salary | deptno | age  |
++-------+------------+-------------------+------+------------+--------+--------+------+
+|     1 | John Doe   | Manager           | NULL | 2023-01-15 |  14000 |     10 |   35 |
+|     2 | Jane Smith | Assistant Manager |    1 | 2023-02-20 |   4000 |     10 |   30 |
+|     1 | John Doe   | Manager           | NULL | 2024-04-10 |  14000 |     10 |   35 |
+|     2 | Jane Smith | Developer         |    1 | 2024-04-10 |  50000 |     20 |   30 |
++-------+------------+-------------------+------+------------+--------+--------+------+
+4 rows in set (0.00 sec)
+<h3> NOT IN OPERATORS</h3>
+mysql> select * from employees where  empname not in("john doe","jane smith");
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+| empno | empname              | job                  | mgr  | hiredate   | salary | deptno | age  |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+|     3 | Michael Johnson      | Sales Representative |    2 | 2023-03-10 |   3000 |     20 |   28 |
+|     4 | Emily Brown          | Sales Representative |    2 | 2023-04-05 |   3000 |     20 |   27 |
+|     5 | William Wilson       | Clerk                |    2 | 2023-05-12 |   2000 |     30 |   25 |
+|     7 | Christopher Martinez | Analyst              |    1 | 2023-07-23 |   4000 |     40 |   32 |
+|     8 | Amanda Taylor        | Analyst              |    1 | 2023-08-30 |   3800 |     40 |   31 |
+|     9 | Olivia Thomas        | Clerk                |    6 | 2023-09-14 |   2100 |     30 |   27 |
+|    10 | Daniel Anderson      | Clerk                |    6 | 2023-10-05 |   3000 |     30 |   29 |
+|     3 | Michael Johnson      | Analyst              |    1 | 2024-04-10 |  55000 |     10 |   32 |
+|     4 | Emily Brown          | Designer             |    1 | 2024-04-10 |  48000 |     20 |   28 |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+9 rows in set (0.00 sec)
+<h3>LIKE OPERATOR</h3>
+
+mysql> select * from employees where empname like "d%";
++-------+-----------------+-------+------+------------+--------+--------+------+
+| empno | empname         | job   | mgr  | hiredate   | salary | deptno | age  |
++-------+-----------------+-------+------+------------+--------+--------+------+
+|    10 | Daniel Anderson | Clerk |    6 | 2023-10-05 |   3000 |     30 |   29 |
++-------+-----------------+-------+------+------------+--------+--------+------+
+1 row in set (0.00 sec)
+
+</pre>
+
+</body>
+</html>

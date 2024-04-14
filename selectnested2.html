@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> SELECT COMMAND NESTED QUERY2</h2>
+    </div>
+
+<pre>
+
+
+mysql> SELECT * FROM emp WHERE deptno = (SELECT deptno FROM emp WHERE emp_name = 'Alice Johnson');
++-------+------------------+-----------+------+------------+---------+------------+--------+
+| empno | emp_name         | job       | mgr  | hiredate   | sal     | commission | deptno |
++-------+------------------+-----------+------+------------+---------+------------+--------+
+|     3 | Alice Johnson    | Developer |    2 | 2022-02-01 | 3500.00 |       NULL |      2 |
+|     4 | Bob Williams     | Developer |    2 | 2022-02-15 | 3500.00 |       NULL |      2 |
+|     8 | Michael Martinez | Developer |    4 | 2022-04-15 | 3400.00 |       NULL |      2 |
++-------+------------------+-----------+------+------------+---------+------------+--------+
+3 rows in set (0.00 sec)
+</pre>
+</body>
+</html>

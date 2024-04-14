@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>FOREIGN KEY USING CREATE COMMAND</h2>
+    </div>
+
+
+<h3> COLUMN LEVEL </h3>
+<pre>
+mysql> create table employe
+    -> (empid int primary key,
+    -> name varchar(50),
+    -> job varchar(40),
+    -> deptno int,
+    -> foreign key(deptno) references dept(deptno));
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> desc employe;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| empid  | int         | NO   | PRI | NULL    |       |
+| name   | varchar(50) | YES  |     | NULL    |       |
+| job    | varchar(40) | YES  |     | NULL    |       |
+| deptno | int         | YES  | MUL | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+</pre>
+<h3> USING CONSTRAINT</h3>
+<pre>
+mysql> CREATE TABLE orders (
+    ->     order_id INT,
+    ->     order_number INT,
+    ->     personid INT,
+    ->     CONSTRAINT fk_personorder FOREIGN KEY (personid) REFERENCES employe (empid)
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> desc orders;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| order_id     | int  | YES  |     | NULL    |       |
+| order_number | int  | YES  |     | NULL    |       |
+| personid     | int  | YES  | MUL | NULL    |       |
++--------------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+</pre>
+
+</body>
+</html>

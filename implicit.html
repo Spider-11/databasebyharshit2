@@ -1,0 +1,52 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>IMPLICIT CURSOR</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+DECLARE
+    -- Define a record type to match the structure of the emp table
+    TYPE emp_record_type IS RECORD (
+        empno INT,
+        emp_name VARCHAR(50)
+    );
+
+    -- Declare a variable of the record type
+    emp_rec emp_record_type;
+BEGIN
+    -- Open the implicit cursor to fetch employee IDs and names
+    FOR emp_rec IN (SELECT empno, emp_name FROM emp) LOOP
+        -- Display employee ID and name
+        DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_rec.empno || ', Employee Name: ' || emp_rec.emp_name);
+    END LOOP;
+
+    -- Display the total number of rows fetched
+    DBMS_OUTPUT.PUT_LINE('Total number of employees: ' || SQL%ROWCOUNT);
+END;
+/
+
+
+<h3>Output</h3>
+Employee ID: 5, Employee Name: Eva Brown
+Employee ID: 18, Employee Name: Amelia Wilson
+Employee ID: 16, Employee Name: Ella Martinez
+Employee ID: 7, Employee Name: Sophia Wilson
+Employee ID: 8, Employee Name: Ethan Johnson
+Employee ID: 4, Employee Name: Bob Williams
+Total number of employees: 
+
+Statement processed.
+
+0.04 seconds
+
+</pre>
+
+
+</body>
+</html>

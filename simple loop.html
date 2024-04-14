@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>LOOP IN PLSQL</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+DECLARE
+    counter NUMBER := 1;
+BEGIN
+    -- Loop will execute until counter reaches 5
+    WHILE counter <= 5 LOOP
+        DBMS_OUTPUT.PUT_LINE('Counter: ' || counter);
+        counter := counter + 1; -- Increment counter
+    END LOOP;
+END;
+/
+
+<h3>Output</h3>
+Counter: 1
+Counter: 2
+Counter: 3
+Counter: 4
+Counter: 5
+
+Statement processed.
+
+0.01 seconds
+
+</pre>
+
+
+</body>
+</html>

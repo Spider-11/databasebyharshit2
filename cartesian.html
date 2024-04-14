@@ -1,0 +1,64 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>CARTESIAN JOIN</h2>
+    </div>
+
+<pre>
+mysql> select empno,name,dname,loc from emp ,dept;
+
+</pre>
+<pre>
++-------+------------------+-----------------+---------------+
+| empno | name             | dname           | loc           |
++-------+------------------+-----------------+---------------+
+|     1 | John Doe         | Research        | San Francisco |
+|     1 | John Doe         | Human Resources | Chicago       |
+|     1 | John Doe         | Marketing       | Los Angeles   |
+|     1 | John Doe         | Finance         | New York      |
+|     2 | Jane Smith       | Research        | San Francisco |
+|     2 | Jane Smith       | Human Resources | Chicago       |
+|     2 | Jane Smith       | Marketing       | Los Angeles   |
+|     2 | Jane Smith       | Finance         | New York      |
+|     3 | Michael Johnson  | Research        | San Francisco |
+|     3 | Michael Johnson  | Human Resources | Chicago       |
+|     3 | Michael Johnson  | Marketing       | Los Angeles   |
+|     3 | Michael Johnson  | Finance         | New York      |
+|     4 | Emily Brown      | Research        | San Francisco |
+|     4 | Emily Brown      | Human Resources | Chicago       |
+|     4 | Emily Brown      | Marketing       | Los Angeles   |
+|     4 | Emily Brown      | Finance         | New York      |
+|     5 | David Lee        | Research        | San Francisco |
+|     5 | David Lee        | Human Resources | Chicago       |
+|     5 | David Lee        | Marketing       | Los Angeles   |
+|     5 | David Lee        | Finance         | New York      |
+|     6 | Sarah Clark      | Research        | San Francisco |
+|     6 | Sarah Clark      | Human Resources | Chicago       |
+|     6 | Sarah Clark      | Marketing       | Los Angeles   |
+|     6 | Sarah Clark      | Finance         | New York      |
+|     7 | Kevin Rodriguez  | Research        | San Francisco |
+|     7 | Kevin Rodriguez  | Human Resources | Chicago       |
+|     7 | Kevin Rodriguez  | Marketing       | Los Angeles   |
+|     7 | Kevin Rodriguez  | Finance         | New York      |
+|     8 | Linda Martinez   | Research        | San Francisco |
+|     8 | Linda Martinez   | Human Resources | Chicago       |
+|     8 | Linda Martinez   | Marketing       | Los Angeles   |
+|     8 | Linda Martinez   | Finance         | New York      |
+|     9 | Michael Williams | Research        | San Francisco |
+|     9 | Michael Williams | Human Resources | Chicago       |
+|     9 | Michael Williams | Marketing       | Los Angeles   |
+|     9 | Michael Williams | Finance         | New York      |
+|    10 | Emma Taylor      | Research        | San Francisco |
+|    10 | Emma Taylor      | Human Resources | Chicago       |
+|    10 | Emma Taylor      | Marketing       | Los Angeles   |
+|    10 | Emma Taylor      | Finance         | New York      |
++-------+------------------+-----------------+---------------+
+40 rows in set (0.00 sec)
+</pre>
+
+</body>
+</html>

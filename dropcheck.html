@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> DROP check command</h2>
+    </div>
+
+<pre>
+mysql> ALTER TABLE persons DROP CONSTRAINT persons_chk_2;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc persons;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int          | NO   |     | NULL    |       |
+| LastName  | varchar(255) | NO   |     | NULL    |       |
+| FirstName | varchar(255) | YES  |     | NULL    |       |
+| Age       | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+mysql>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>UPDATE VALUES IN TABLE</h2>
+    </div>
+
+<pre>
+
+mysql> update employees set salary =3000 where empno = 10;
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+</pre>
+<pre>
+
+mysql> select * from employ;
++-------+----------------------+----------------------+------+------------+---------+------------+--------+
+| empno | empname              | job                  | mgr  | hiredate   | salary  | commission | deptno |
++-------+----------------------+----------------------+------+------------+---------+------------+--------+
+|     1 | John Doe             | Manager              | NULL | 2023-01-15 | 5000.00 |       NULL |     10 |
+|     2 | Jane Smith           | Assistant Manager    |    1 | 2023-02-20 | 4000.00 |     100.00 |     10 |
+|     3 | Michael Johnson      | Sales Representative |    2 | 2023-03-10 | 3000.00 |     200.00 |     20 |
+|     4 | Emily Brown          | Sales Representative |    2 | 2023-04-05 | 3000.00 |     250.00 |     20 |
+|     5 | William Wilson       | Clerk                |    2 | 2023-05-12 | 2000.00 |       NULL |     30 |
+|     6 | Megan Davis          | Clerk                |    2 | 2023-06-18 | 2000.00 |       NULL |     30 |
+|     7 | Christopher Martinez | Analyst              |    1 | 2023-07-23 | 4000.00 |       NULL |     40 |
+|     8 | Amanda Taylor        | Analyst              |    1 | 2023-08-30 | 3800.00 |       NULL |     40 |
+|     9 | Olivia Thomas        | Clerk                |    6 | 2023-09-14 | 2100.00 |       NULL |     30 |
+|    10 | Daniel Anderson      | Clerk                |    6 | 2023-10-05 | 2200.00 |       NULL |     30 |
++-------+----------------------+----------------------+------+------------+---------+------------+--------+
+10 rows in set (0.07 sec)
+</pre>
+<pre>
+mysql> select * from employees;
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+| empno | empname              | job                  | mgr  | hiredate   | salary | deptno | age  |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+|     1 | John Doe             | Manager              | NULL | 2023-01-15 |   5000 |     10 |   35 |
+|     2 | Jane Smith           | Assistant Manager    |    1 | 2023-02-20 |   4000 |     10 |   30 |
+|     3 | Michael Johnson      | Sales Representative |    2 | 2023-03-10 |   3000 |     20 |   28 |
+|     4 | Emily Brown          | Sales Representative |    2 | 2023-04-05 |   3000 |     20 |   27 |
+|     5 | William Wilson       | Clerk                |    2 | 2023-05-12 |   2000 |     30 |   25 |
+|     6 | Megan Davis          | Clerk                |    2 | 2023-06-18 |   2000 |     30 |   26 |
+|     7 | Christopher Martinez | Analyst              |    1 | 2023-07-23 |   4000 |     40 |   32 |
+|     8 | Amanda Taylor        | Analyst              |    1 | 2023-08-30 |   3800 |     40 |   31 |
+|     9 | Olivia Thomas        | Clerk                |    6 | 2023-09-14 |   2100 |     30 |   27 |
+|    10 | Daniel Anderson      | Clerk                |    6 | 2023-10-05 |   3000 |     30 |   29 |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+10 rows in set (0.00 sec)
+</pre>
+
+</body>
+</html>

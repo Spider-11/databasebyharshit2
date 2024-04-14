@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>PRIMARY KEY USING ALTER COMMAND</h2>
+    </div>
+<
+<pre>
+mysql> alter table emp add  primary key(empno);
+Query OK, 0 rows affected (0.28 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| empno    | int           | NO   | PRI | NULL    |       |
+| name     | varchar(100)  | YES  |     | NULL    |       |
+| job      | varchar(100)  | YES  |     | NULL    |       |
+| mgr      | int           | YES  |     | NULL    |       |
+| hiredate | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| deptno   | int           | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+<h3>USING CONSTRAINT </h3>
+mysql> alter table dept add constraint pk primary key(deptno);
+Query OK, 0 rows affected (0.27 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc dept;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| deptno | int         | NO   | PRI | NULL    |       |
+| dname  | varchar(20) | YES  |     | NULL    |       |
+| loc    | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+
+</pre>
+
+</body>
+</html>

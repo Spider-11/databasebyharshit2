@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> SELECT COMMAND NESTED QUERY 3</h2>
+    </div>
+
+<pre>
+
+
+mysql> select emp_name, deptno,sal from emp where sal=(select max(sal) from emp where sal <(select max(sal) from emp));
++------------+--------+---------+
+| emp_name   | deptno | sal     |
++------------+--------+---------+
+| Jane Smith |      1 | 4000.00 |
++------------+--------+---------+
+1 row in set (0.00 sec)
+</pre>
+</body>
+</html>

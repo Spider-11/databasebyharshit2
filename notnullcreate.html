@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>NOT NULL command </h2>
+    </div>
+
+<pre>
+
+mysql> CREATE TABLE Person(ID int NOT NULL,LastName varchar(255) NOT NULL,
+    -> FirstName varchar(255),Age int,UNIQUE (ID));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc person;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int          | NO   | PRI | NULL    |       |
+| LastName  | varchar(255) | NO   |     | NULL    |       |
+| FirstName | varchar(255) | YES  |     | NULL    |       |
+| Age       | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+</body>
+</html>

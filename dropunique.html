@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>UNIQUE COMMAND DROP command </h2>
+    </div>
+
+<pre>
+
+mysql> alter table person drop CONSTRAINT ID;
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc person;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int          | NO   |     | NULL    |       |
+| LastName  | varchar(255) | NO   |     | NULL    |       |
+| FirstName | varchar(255) | YES  |     | NULL    |       |
+| Age       | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+</body>
+</html>

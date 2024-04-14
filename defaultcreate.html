@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> DEFAULT VALUE IN CREATE COMMAND</h2>
+    </div>
+
+<pre>
+
+mysql> CREATE TABLE Persons (ID int NOT NULL,LastName varchar(10) NOT NULL,
+    -> FirstName varchar(10),Age int,City varchar(255) DEFAULT 'Sandnes');
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> desc persons;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int          | NO   |     | NULL    |       |
+| LastName  | varchar(10)  | NO   |     | NULL    |       |
+| FirstName | varchar(10)  | YES  |     | NULL    |       |
+| Age       | int          | YES  |     | NULL    |       |
+| City      | varchar(255) | YES  |     | Sandnes |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>DELETING DATA FROM VIEW</h2>
+    </div>
+
+<pre>
+
+mysql> delete from v1 where job ='Assistent Manager';
+Query OK, 0 rows affected (0.00 sec)
+</pre>
+<pre>
+
+mysql> select * from v1;
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+| empno | empname         | job               | mgr  | hiredate   | salary | deptno | age  |
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+|     1 | John Doe        | Manager           | NULL | 2023-01-15 |  14000 |     10 |   35 |
+|     1 | John Doe        | Manager           | NULL | 2024-04-10 |  14000 |     10 |   35 |
+|     3 | Michael Johnson | Analyst           |    1 | 2024-04-10 |  55000 |     10 |   32 |
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+4 rows in set (0.00 sec)
+
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>EQUI JOIN</h2>
+    </div>
+
+<pre>
+mysql> select empno,name,emp.deptno,dname from emp ,dept where emp.deptno=dept.deptno;
+</pre>
+<pre>
++-------+------------------+--------+-----------------+
+| empno | name             | deptno | dname           |
++-------+------------------+--------+-----------------+
+|     1 | John Doe         |     10 | Finance         |
+|     2 | Jane Smith       |     20 | Marketing       |
+|     3 | Michael Johnson  |     30 | Human Resources |
+|     4 | Emily Brown      |     40 | Research        |
+|     5 | David Lee        |     10 | Finance         |
+|     6 | Sarah Clark      |     20 | Marketing       |
+|     7 | Kevin Rodriguez  |     30 | Human Resources |
+|     8 | Linda Martinez   |     40 | Research        |
+|     9 | Michael Williams |     10 | Finance         |
+|    10 | Emma Taylor      |     20 | Marketing       |
++-------+------------------+--------+-----------------+
+10 rows in set (0.00 sec)
+</pre>
+
+</body>
+</html>

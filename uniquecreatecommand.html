@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>UNIQUE COMMAND </h2>
+    </div>
+<h3> COLUMN LEVEL</h3>
+<pre>
+mysql> CREATE TABLE Persons(ID int NOT NULL UNIQUE,LastName varchar(255)
+    -> NOT NULL,FirstName varchar(255),Age int);
+Query OK, 0 rows affected (0.10 sec)
+
+
+mysql> desc persons;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int          | NO   | PRI | NULL    |       |
+| LastName  | varchar(255) | NO   |     | NULL    |       |
+| FirstName | varchar(255) | YES  |     | NULL    |       |
+| Age       | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+</pre>
+<h3> TABLE LEVEL</h3>
+<pre>
+mysql> CREATE TABLE Person(ID int NOT NULL,LastName varchar(255) NOT NULL,
+    -> FirstName varchar(255),Age int,UNIQUE (ID));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc person;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int          | NO   | PRI | NULL    |       |
+| LastName  | varchar(255) | NO   |     | NULL    |       |
+| FirstName | varchar(255) | YES  |     | NULL    |       |
+| Age       | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+</pre>
+<h3>USING CONSTRAINT</h3>
+<pre>
+mysql> CREATE TABLE person1 (
+    ->     id INT,
+    ->     lastname VARCHAR(50),
+    ->     firstname VARCHAR(40),
+    ->     age INT,
+    ->     CONSTRAINT u_c UNIQUE (id)
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> desc person1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| id        | int         | YES  | UNI | NULL    |       |
+| lastname  | varchar(50) | YES  |     | NULL    |       |
+| firstname | varchar(40) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+mysql>
+
+</pre>
+
+</body>
+</html>

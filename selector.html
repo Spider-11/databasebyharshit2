@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> SELECT COMMAND USING or OPERATOR</h2>
+    </div>
+
+<pre>
+
+
+mysql> select * from emp where job = 'clerk' or job = 'analyst' order by job desc;
++-------+---------------+---------+------+------------+---------+------------+--------+
+| empno | emp_name      | job     | mgr  | hiredate   | sal     | commission | deptno |
++-------+---------------+---------+------+------------+---------+------------+--------+
+|     5 | Eva Brown     | Analyst |    1 | 2022-03-01 | 3800.00 |     150.00 |      1 |
+|     7 | Sophia Garcia | Analyst |    5 | 2022-04-01 | 3700.00 |       NULL |      1 |
++-------+---------------+---------+------+------------+---------+------------+--------+
+2 rows in set (0.00 sec)
+
+
+</body>
+</html>

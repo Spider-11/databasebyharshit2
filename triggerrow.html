@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>ROW LEVEL TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+CREATE OR REPLACE TRIGGER row_level_trigger
+AFTER INSERT ON emp
+FOR EACH ROW
+DECLARE
+    v_total_salary DECIMAL(10, 2);
+BEGIN
+    
+    SELECT SUM(sal) INTO v_total_salary FROM emp;
+  
+    DBMS_OUTPUT.PUT_LINE('Total salary of all employees: ' || v_total_salary);
+END;
+
+
+/INSERT INTO emp (empno, emp_name, job, sal) VALUES (1, 'John Doe', 'Manager', 5000);
+
+
+<h3>Output</h3>
+Total salary of all employees: 49500
+
+1 row(s) inserted.
+
+0.06 seconds
+
+</pre>
+
+
+</body>
+</html>

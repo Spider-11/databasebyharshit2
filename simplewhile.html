@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>WHILE LOOP</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+DECLARE
+    num NUMBER := 5; -- Change the number here
+    factorial NUMBER := 1;
+    i NUMBER := 1;
+BEGIN
+    WHILE i <= num LOOP
+        factorial := factorial * i;
+        i := i + 1;
+    END LOOP;
+    
+    DBMS_OUTPUT.PUT_LINE('Factorial of ' || num || ' is ' || factorial);
+END;
+/
+
+<h3>Output</h3>
+Factorial of 5 is 120
+
+Statement processed.
+
+0.01 seconds
+
+</pre>
+
+
+</body>
+</html>

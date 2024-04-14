@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>INSERT VALUES INTO TABLE</h2>
+    </div>
+
+<pre>
+
+mysql> INSERT INTO employ (empno, empname, job, mgr, hiredate, salary, commission, deptno) VALUES
+    -> (1, 'John Doe', 'Manager', NULL, '2023-01-15', 5000.00, NULL, 10),
+    -> (2, 'Jane Smith', 'Assistant Manager', 1, '2023-02-20', 4000.00, 100.00, 10),
+    -> (3, 'Michael Johnson', 'Sales Representative', 2, '2023-03-10', 3000.00, 200.00, 20),
+    -> (4, 'Emily Brown', 'Sales Representative', 2, '2023-04-05', 3000.00, 250.00, 20),
+    -> (5, 'William Wilson', 'Clerk', 2, '2023-05-12', 2000.00, NULL, 30),
+    -> (6, 'Megan Davis', 'Clerk', 2, '2023-06-18', 2000.00, NULL, 30),
+    -> (7, 'Christopher Martinez', 'Analyst', 1, '2023-07-23', 4000.00, NULL, 40),
+    -> (8, 'Amanda Taylor', 'Analyst', 1, '2023-08-30', 3800.00, NULL, 40),
+    -> (9, 'Olivia Thomas', 'Clerk', 6, '2023-09-14', 2100.00, NULL, 30),
+    -> (10, 'Daniel Anderson', 'Clerk', 6, '2023-10-05', 2200.00, NULL, 30);
+Query OK, 10 rows affected (0.10 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+</pre>
+<pre>
+
+mysql> select * from employ;
++-------+----------------------+----------------------+------+------------+---------+------------+--------+
+| empno | empname              | job                  | mgr  | hiredate   | salary  | commission | deptno |
++-------+----------------------+----------------------+------+------------+---------+------------+--------+
+|     1 | John Doe             | Manager              | NULL | 2023-01-15 | 5000.00 |       NULL |     10 |
+|     2 | Jane Smith           | Assistant Manager    |    1 | 2023-02-20 | 4000.00 |     100.00 |     10 |
+|     3 | Michael Johnson      | Sales Representative |    2 | 2023-03-10 | 3000.00 |     200.00 |     20 |
+|     4 | Emily Brown          | Sales Representative |    2 | 2023-04-05 | 3000.00 |     250.00 |     20 |
+|     5 | William Wilson       | Clerk                |    2 | 2023-05-12 | 2000.00 |       NULL |     30 |
+|     6 | Megan Davis          | Clerk                |    2 | 2023-06-18 | 2000.00 |       NULL |     30 |
+|     7 | Christopher Martinez | Analyst              |    1 | 2023-07-23 | 4000.00 |       NULL |     40 |
+|     8 | Amanda Taylor        | Analyst              |    1 | 2023-08-30 | 3800.00 |       NULL |     40 |
+|     9 | Olivia Thomas        | Clerk                |    6 | 2023-09-14 | 2100.00 |       NULL |     30 |
+|    10 | Daniel Anderson      | Clerk                |    6 | 2023-10-05 | 2200.00 |       NULL |     30 |
++-------+----------------------+----------------------+------+------------+---------+------------+--------+
+10 rows in set (0.07 sec)
+</pre>
+
+
+</body>
+</html>

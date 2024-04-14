@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>AFTER UPDATE TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+CREATE OR REPLACE TRIGGER after_update_trigger
+AFTER UPDATE ON emplo
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Row updated. Employee number: ' || :NEW.empno || ', New salary: ' || :NEW.sal);
+END;
+/
+
+UPDATE emplo SET emp_name = 'John Doe' WHERE empno = 101;
+<h3>Output</h3>
+Row updated. Employee number: 101, New salary: 5000
+
+1 row(s) updated.
+
+0.01 seconds
+</body>
+</html>

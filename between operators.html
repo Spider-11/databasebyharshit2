@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>BETWEEN OPERATOR</h2>
+    </div>
+
+<pre>
+
+mysql> select * from employees where salary between 4000 and 25000;
++-------+----------------------+-------------------+------+------------+--------+--------+------+
+| empno | empname              | job               | mgr  | hiredate   | salary | deptno | age  |
++-------+----------------------+-------------------+------+------------+--------+--------+------+
+|     1 | John Doe             | Manager           | NULL | 2023-01-15 |  14000 |     10 |   35 |
+|     2 | Jane Smith           | Assistant Manager |    1 | 2023-02-20 |   4000 |     10 |   30 |
+|     7 | Christopher Martinez | Analyst           |    1 | 2023-07-23 |   4000 |     40 |   32 |
+|     1 | John Doe             | Manager           | NULL | 2024-04-10 |  14000 |     10 |   35 |
++-------+----------------------+-------------------+------+------------+--------+--------+------+
+4 rows in set (0.07 sec)
+</pre>
+
+</body>
+</html>

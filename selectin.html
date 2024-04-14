@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> SELECT COMMAND USING IN OPERATOR</h2>
+    </div>
+
+<pre>
+
+mysql> select * from emp where empno in(select mgr from emp);
++-------+---------------+-------------------+------+------------+---------+------------+--------+
+| empno | emp_name      | job               | mgr  | hiredate   | sal     | commission | deptno |
++-------+---------------+-------------------+------+------------+---------+------------+--------+
+|     1 | John Doe      | Manager           | NULL | 2022-01-01 | 5000.00 |       NULL |      1 |
+|     2 | Jane Smith    | Assistant Manager |    1 | 2022-01-15 | 4000.00 |     200.00 |      1 |
+|     4 | Bob Williams  | Developer         |    2 | 2022-02-15 | 3500.00 |       NULL |      2 |
+|     5 | Eva Brown     | Analyst           |    1 | 2022-03-01 | 3800.00 |     150.00 |      1 |
+|     3 | Alice Johnson | Developer         |    2 | 2022-02-01 | 3500.00 |       NULL |      2 |
++-------+---------------+-------------------+------+------------+---------+------------+--------+
+5 rows in set (0.00 sec)
+
+</body>
+</html>

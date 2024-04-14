@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>DROP PRIMARY KEY</h2>
+    </div>
+
+<pre>
+mysql> alter table emp drop primary key;
+Query OK, 10 rows affected (0.06 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| empno    | int           | NO   |     | NULL    |       |
+| name     | varchar(100)  | YES  |     | NULL    |       |
+| job      | varchar(100)  | YES  |     | NULL    |       |
+| mgr      | int           | YES  |     | NULL    |       |
+| hiredate | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| deptno   | int           | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+
+</pre>
+
+</body>
+</html>

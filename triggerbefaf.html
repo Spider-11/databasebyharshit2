@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>BEFORE DELETE  TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+CREATE OR REPLACE TRIGGER before_delete_trigger
+BEFORE DELETE ON emplo
+FOR EACH ROW
+BEGIN
+    
+    IF :OLD.empno = 101 THEN
+        DBMS_OUTPUT.PUT_LINE('Deletion of employee with empno 101 is not allowed.');
+     
+    END IF;
+END;
+/
+DELETE FROM emplo WHERE empno = 101;
+<h3>Output</h3>
+Deletion of employee with empno 101 is not allowed.
+
+1 row(s) deleted.
+
+0.06 seconds
+
+</body>
+</html>

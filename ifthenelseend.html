@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>IF THEN ELSE END IF</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+SET SERVEROUTPUT ON;
+DECLARE
+    num NUMBER := -10; 
+BEGIN
+    IF num > 0 THEN 
+        DBMS_OUTPUT.PUT_LINE('The number is positive.');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('The number is either zero or negative.');
+    END IF; 
+END;
+/
+<h3>Output</h3>
+The number is either zero or negative.
+
+Statement processed.
+
+0.01 seconds
+
+</pre>
+
+
+</body>
+</html>

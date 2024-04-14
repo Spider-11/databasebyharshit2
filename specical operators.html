@@ -1,0 +1,72 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>SPECIAL OPERATOR IN SUB QUERIES</h2>
+    </div>
+
+<pre>
+<h3> EXISTS OPERATOR</h3>
+
+mysql> select * from emp where deptno= 10 and exists (select count(*) from emp where deptno=10 group by deptno having count(*)<5);
++-------+------------------+----------+------+------------+----------+--------+
+| empno | name             | job      | mgr  | hiredate   | sal      | deptno |
++-------+------------------+----------+------+------------+----------+--------+
+|     1 | John Doe         | Manager  | NULL | 2024-04-10 | 60000.00 |     10 |
+|     5 | David Lee        | Engineer |    1 | 2024-04-10 | 52000.00 |     10 |
+|     9 | Michael Williams | Designer |    6 | 2024-04-10 | 49000.00 |     10 |
++-------+------------------+----------+------+------------+----------+--------+
+3 rows in set (0.08 sec)
+
+<h3> ANY OPERATOR</h3>
+mysql> select name , sal from emp where sal>any(select sal from emp where deptno=30);
++-----------------+----------+
+| name            | sal      |
++-----------------+----------+
+| John Doe        | 60000.00 |
+| Jane Smith      | 50000.00 |
+| Michael Johnson | 55000.00 |
+| David Lee       | 52000.00 |
+| Sarah Clark     | 58000.00 |
+| Linda Martinez  | 56000.00 |
+| Emma Taylor     | 53000.00 |
++-----------------+----------+
+7 rows in set (0.07 sec)
+
+<h3> SOME OPERATOR</h3>
+mysql> select name , sal from emp where sal>some(select sal from emp where deptno=30);
++-----------------+----------+
+| name            | sal      |
++-----------------+----------+
+| John Doe        | 60000.00 |
+| Jane Smith      | 50000.00 |
+| Michael Johnson | 55000.00 |
+| David Lee       | 52000.00 |
+| Sarah Clark     | 58000.00 |
+| Linda Martinez  | 56000.00 |
+| Emma Taylor     | 53000.00 |
++-----------------+----------+
+7 rows in set (0.07 sec)
+<h3>ALL OPERATOR</h3>
+
+mysql> SELECT name, sal
+    -> FROM emp
+    -> WHERE sal > ALL (SELECT sal FROM emp WHERE deptno = 30);
++----------------+----------+
+| name           | sal      |
++----------------+----------+
+| John Doe       | 60000.00 |
+| Sarah Clark    | 58000.00 |
+| Linda Martinez | 56000.00 |
++----------------+----------+
+3 rows in set (0.00 sec)
+
+</pre>
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> SELECT COMMAND USING BETWEEN OPERATOR</h2>
+    </div>
+
+<pre>
+
+
+mysql> select * from emp where hiredate between '2022-01-10' and'2022-03-19';
++-------+---------------+-------------------+------+------------+---------+------------+--------+
+| empno | emp_name      | job               | mgr  | hiredate   | sal     | commission | deptno |
++-------+---------------+-------------------+------+------------+---------+------------+--------+
+|     2 | Jane Smith    | Assistant Manager |    1 | 2022-01-15 | 4000.00 |     200.00 |      1 |
+|     3 | Alice Johnson | Developer         |    2 | 2022-02-01 | 3500.00 |       NULL |      2 |
+|     4 | Bob Williams  | Developer         |    2 | 2022-02-15 | 3500.00 |       NULL |      2 |
+|     5 | Eva Brown     | Analyst           |    1 | 2022-03-01 | 3800.00 |     150.00 |      1 |
+|     6 | David Lee     | Developer         |    4 | 2022-03-15 | 3300.00 |       NULL |      3 |
++-------+---------------+-------------------+------+------------+---------+------------+--------+
+5 rows in set (0.00 sec)
+
+
+</body>
+</html>

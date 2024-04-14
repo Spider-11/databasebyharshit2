@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>DATE FUNCTION</h2>
+    </div>
+<h3> SYSTEM DATE </h3>
+<pre>
+mysql> select now() from dual;
+</pre>
+<pre>
+mysql> select now() from dual;
++---------------------+
+| now()               |
++---------------------+
+| 2024-04-10 19:44:32 |
++---------------------+
+1 row in set (0.00 sec)
+</pre>
+<h3>ADD MONTH</h3>
+<pre>mysql> SELECT NOW(), DATE_ADD(NOW(), INTERVAL 4 MONTH);</pre>
+<pre>
++---------------------+-----------------------------------+
+| NOW()               | DATE_ADD(NOW(), INTERVAL 4 MONTH) |
++---------------------+-----------------------------------+
+| 2024-04-10 20:13:57 | 2024-08-10 20:13:57               |
++---------------------+-----------------------------------+
+1 row in set (0.08 sec)</pre>
+<h3>MONTH BETWEEN</h3>
+<pre>mysql> SELECT TIMESTAMPDIFF(MONTH, '1978-12-25', '1981-12-25') AS date1;</pre>
+<pre>
++-------+
+| date1 |
++-------+
+|    36 |
++-------+
+1 row in set (0.00 sec)
+</pre>
+<h3> NEXT DATE</h3>
+<pre>mysql> SELECT DATE_ADD(NOW(), INTERVAL 1 DAY) AS next_day;</pre>
+<pre>
++---------------------+
+| next_day            |
++---------------------+
+| 2024-04-11 20:20:48 |
++---------------------+
+1 row in set (0.00 sec)
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>CREATING VIEW</h2>
+    </div>
+
+<pre>
+mysql>  create view v1 as select * from employees where deptno = 10;
+Query OK, 0 rows affected (0.09 sec)
+
+</pre>
+<pre>
+ 
+mysql> select * from v1;
++-------+------------+-------------------+------+------------+--------+--------+------+
+| empno | empname    | job               | mgr  | hiredate   | salary | deptno | age  |
++-------+------------+-------------------+------+------------+--------+--------+------+
+|     1 | John Doe   | Manager           | NULL | 2023-01-15 |   5000 |     10 |   35 |
+|     2 | Jane Smith | Assistant Manager |    1 | 2023-02-20 |   4000 |     10 |   30 |
++-------+------------+-------------------+------+------------+--------+--------+------+
+2 rows in set (0.08 sec)
+</pre>
+
+</body>
+</html>

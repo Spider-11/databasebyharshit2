@@ -1,0 +1,120 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>CHARACTER FUNCTION</h2>
+    </div>
+<h3>LOWER STRING</h3>
+<pre>
+select lower (dname) from dept;
+</pre>
+<pre>
++-----------------+
+| lower (dname)   |
++-----------------+
+| finance         |
+| marketing       |
+| human resources |
+| research        |
++-----------------+
+4 rows in set (0.08 sec)
+</pre>
+<h3> UPPER STRING</h3>
+<pre>mysql> select upper (dname) from dept;
+</pre>
+<pre>
++-----------------+
+| upper (dname)   |
++-----------------+
+| FINANCE         |
+| MARKETING       |
+| HUMAN RESOURCES |
+| RESEARCH        |
++-----------------+
+4 rows in set (0.01 sec)
+</pre>
+<h3>ASCII value of string</h3>
+<pre>mysql> select ascii("amit") from dual;</pre>
+<pre>
++---------------+
+| ascii("amit") |
++---------------+
+|            97 |
++---------------+
+1 row in set (0.08 sec)
+</pre>
+<h3> REPLACE THE CHARACTER</h3>
+<pre>mysql> select replace ("this and that","th","ht") as  result from dual;</pre>
+<pre>+---------------+
+| result        |
++---------------+
+| htis and htat |
++---------------+
+1 row in set (0.00 sec)
+</pre>
+<h3>SUBSTR</h3>
+<pre>
+mysql> select dname ,substr(dname,2,4)as sub1,substr(dname,4) as sub2 from dept;
++-----------------+------+--------------+
+| dname           | sub1 | sub2         |
++-----------------+------+--------------+
+| Finance         | inan | ance         |
+| Marketing       | arke | keting       |
+| Human Resources | uman | an Resources |
+| Research        | esea | earch        |
++-----------------+------+--------------+
+4 rows in set (0.13 sec)
+</pre>
+<h3>CONCAT</h3>
+<pre>
+
+mysql> select concat ('puneet','superstar') as myname from dual;
++-----------------+
+| myname          |
++-----------------+
+| puneetsuperstar |
++-----------------+
+1 row in set (0.07 sec)
+</pre>
+<h3>LENGHT</h3>
+<pre>
++-----------------+---------------+
+| dname           | LENGTH(dname) |
++-----------------+---------------+
+| Finance         |             7 |
+| Marketing       |             9 |
+| Human Resources |            15 |
+| Research        |             8 |
++-----------------+---------------+
+4 rows in set (0.01 sec)
+</pre>
+<h3> LTRIM </H3>
+<pre>mysql> SELECT dname, LTRIM(dname) FROM dept;
++-----------------+-----------------+
+| dname           | LTRIM(dname)    | 
++-----------------+-----------------+
+| Finance         | Finance         |           
+| Marketing       | Marketing       |
+| Human Resources | Human Resources |
+| Research        | Research        | 
++-----------------+-----------------+
+4 rows in set (0.00 sec)
+</pre>
+<h3> RTRIM</h3>
+<pre>
+mysql> SELECT dname, RTRIM(dname) FROM dept;
++-----------------+-----------------+
+| dname           | RTRIM(dname)    |
++-----------------+-----------------+
+| Finance         | Finance         |
+| Marketing       | Marketing       |
+| Human Resources | Human Resources |
+| Research        | Research        |
++-----------------+-----------------+
+4 rows in set (0.08 sec)
+</pre>
+</body>
+</html>

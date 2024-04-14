@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> % ROWTYPE ATTRIBUTE </h2>
+    </div>
+
+<pre>
+
+declare
+        x student%rowtype;
+        begin
+        select * into x from student where roll=1;
+        dbms_output.put_line(x.roll||' '||x.name);
+        end;
+    
+        Statement processed.
+        1 rahul
+</pre>
+</body>
+</html>

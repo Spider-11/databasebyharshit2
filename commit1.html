@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>COMMIT STATEMENT IS USED TO MAKE CHANGES TO DATA PERMANENTLY TO THE DATABASE.</h2>
+    </div>
+
+  <PRE>mysql> insert into student values(4309,'kuldeep','BCA 4th','a');
+    Query OK, 1 row affected (0.00 sec)
+    
+    mysql> COMMIT;
+    Query OK, 0 rows affected (0.03 sec)
+    
+    mysql> select * from student;
+    +--------+----------+---------+---------+
+    | rollno | name     | class   | section |
+    +--------+----------+---------+---------+
+    |   4247 | Amandeep | BCA 4th | a       |
+    |   4263 | Jahid    | BCA 4th | a       |
+    |   4264 | Harshit  | BCA 4th | b       |
+    |   4269 | Rahul    | BCA 4th | b       |
+    |   4303 | Gaurav   | BCA 4th | b       |
+    |   4309 | kuldeep  | BCA 4th | a       |
+    +--------+----------+---------+---------+
+    6 rows in set (0.00 sec)</PRE>
+
+</body>
+</html>

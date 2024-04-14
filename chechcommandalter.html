@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>check command</h2>
+    </div>
+
+<pre>
+mysql> ALTER TABLE Persons ADD CHECK (lastname<>'sharma'););
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+mysql> INSERT INTO Persons (ID, LastName, FirstName, Age)
+    -> VALUES (1, 'sharma', 'John', 24);
+ERROR 3819 (HY000): Check constraint 'persons_chk_2' is violated.
+mysql>
+</body>
+</html>

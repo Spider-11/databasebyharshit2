@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+
+CREATE OR REPLACE TRIGGER check_salary_trigger
+BEFORE INSERT ON emp
+FOR EACH ROW
+DECLARE
+
+    salary_too_high_exception EXCEPTION;
+BEGIN
+  
+    IF :NEW.sal > 10000 THEN
+      
+        RAISE salary_too_high_exception;
+    END IF;
+EXCEPTION
+  
+    WHEN salary_too_high_exception THEN
+   
+        DBMS_OUTPUT.PUT_LINE('Error: Salary exceeds the threshold.');
+END;
+/
+
+
+
+<h3>Output</h3>
+Error: Salary exceeds the threshold.
+
+
+Statement processed.
+
+0.00 seconds
+
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>USER-DEFINED EXCEPTION</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+DECLARE
+ 
+    custom_exception EXCEPTION;
+
+   
+    v_salary emp.sal%TYPE;
+BEGIN
+  
+    BEGIN
+        SELECT sal INTO v_salary FROM emp WHERE empno = 1000;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('No salary found for employee with empno 1000.');
+            RETURN; 
+    END;
+
+    IF v_salary > 5000 THEN
+
+        RAISE custom_exception;
+    END IF;
+
+EXCEPTION
+
+    WHEN custom_exception THEN
+    
+        DBMS_OUTPUT.PUT_LINE('Salary exceeds 5000.');
+END;
+/
+
+
+<h3>Output</h3>
+No salary found for employee with empno 1000.
+
+Statement processed.
+
+0.00 seconds
+
+</pre>
+
+
+</body>
+</html>

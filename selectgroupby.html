@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> SELECT COMMAND USING IN OPERATOR</h2>
+    </div>
+
+<pre>
+
+mysql> select age,count(age) from student_marks group by age;
+        +------+------------+
+        | age  | count(age) |
+        +------+------------+
+        |   20 |          5 |
+        |   19 |          2 |
+        +------+------------+
+        2 rows in set (0.01 sec)
+</body>
+</html>

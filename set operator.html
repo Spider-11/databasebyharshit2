@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>SET  OPERATOR</h2>
+    </div>
+
+<pre>
+<h3> UNION OPERATOr</h3>
+
+mysql> select job from emp where deptno=20 union select job from emp where deptno=30;
++-----------+
+| job       |
++-----------+
+| Developer |
+| Manager   |
+| Engineer  |
+| Analyst   |
++-----------+
+4 rows in set (0.08 sec)
+
+<h3> UNION ALL OPERATOR</h3>
+
+mysql> select job from emp where deptno=20 union all select job from emp where deptno=30;
++-----------+
+| job       |
++-----------+
+| Developer |
+| Manager   |
+| Engineer  |
+| Analyst   |
+| Developer |
++-----------+
+5 rows in set (0.00 sec)
+
+<h3> INTERSECT OPERATOR</h3>
+
+mysql> select job from emp where deptno=20 intersect select job from emp where deptno=30;
++-----------+
+| job       |
++-----------+
+| Developer |
++-----------+
+1 row in set (0.00 sec)
+
+
+</body>
+</html>

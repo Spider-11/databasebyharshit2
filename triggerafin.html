@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>AFTER INSERT TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+CREATE OR REPLACE TRIGGER after_insert_trigger
+AFTER INSERT ON emplo
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('New row inserted. Employee number: ' || :NEW.empno || ', Employee name: ' || :NEW.emp_name);
+END;
+/
+INSERT INTO emplo (empno, emp_name, sal) VALUES (101, 'John Doe', 5000);
+<h3>Output</h3>
+New employee number: 101
+New employee name: John Doe
+New salary: 5000
+New row inserted. Employee number: 101, Employee name: John Doe
+
+1 row(s) inserted.
+
+0.04 seconds
+
+</body>
+</html>

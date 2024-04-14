@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> SELECT COMMAND USING HAVING CLAUSE</h2>
+    </div>
+
+<pre>
+
+mysql> SELECT deptno, AVG(sal) AS avg_salary
+    -> FROM emp
+    -> GROUP BY deptno
+    -> HAVING AVG(sal) > 4000;
++--------+--------------+
+| deptno | avg_salary   |
++--------+--------------+
+|     10 | 53666.666667 |
+|     20 | 53666.666667 |
+|     30 | 52000.000000 |
+|     40 | 52000.000000 |
++--------+--------------+
+4 rows in set (0.09 sec)
+
+
+</body>
+</html>

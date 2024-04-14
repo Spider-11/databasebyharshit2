@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>left outer join</h2>
+    </div>
+
+<pre>
+mysql> select * from emp left join dept on emp.deptno=dept.deptno;
+
+</pre>
+<pre>
++-------+------------------+-----------+------+------------+----------+--------+--------+-----------------+---------------+
+| empno | name             | job       | mgr  | hiredate   | sal      | deptno | deptno | dname           | loc           |
++-------+------------------+-----------+------+------------+----------+--------+--------+-----------------+---------------+
+|     1 | John Doe         | Manager   | NULL | 2024-04-10 | 60000.00 |     10 |     10 | Finance         | New York      |
+|     2 | Jane Smith       | Developer |    1 | 2024-04-10 | 50000.00 |     20 |     20 | Marketing       | Los Angeles   |
+|     3 | Michael Johnson  | Analyst   |    1 | 2024-04-10 | 55000.00 |     30 |     30 | Human Resources | Chicago       |
+|     4 | Emily Brown      | Designer  |    1 | 2024-04-10 | 48000.00 |     40 |     40 | Research        | San Francisco |
+|     5 | David Lee        | Engineer  |    1 | 2024-04-10 | 52000.00 |     10 |     10 | Finance         | New York      |
+|     6 | Sarah Clark      | Manager   | NULL | 2024-04-10 | 58000.00 |     20 |     20 | Marketing       | Los Angeles   |
+|     7 | Kevin Rodriguez  | Developer |    6 | 2024-04-10 | 49000.00 |     30 |     30 | Human Resources | Chicago       |
+|     8 | Linda Martinez   | Analyst   |    6 | 2024-04-10 | 56000.00 |     40 |     40 | Research        | San Francisco |
+|     9 | Michael Williams | Designer  |    6 | 2024-04-10 | 49000.00 |     10 |     10 | Finance         | New York      |
+|    10 | Emma Taylor      | Engineer  |    6 | 2024-04-10 | 53000.00 |     20 |     20 | Marketing       | Los Angeles   |
++-------+------------------+-----------+------+------------+----------+--------+--------+-----------------+---------------+
+10 rows in set (0.00 sec)
+
+</pre>
+
+</body>
+</html>

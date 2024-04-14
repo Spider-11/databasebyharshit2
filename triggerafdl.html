@@ -1,0 +1,30 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>AFTER DELETE TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+CREATE OR REPLACE TRIGGER after_delete_trigger
+AFTER DELETE ON emplo
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Row deleted. Employee number: ' || :OLD.empno || ', Employee name: ' || :OLD.emp_name);
+END;
+/
+
+DELETE FROM emplo WHERE empno = 101;
+<h3>Output</h3>
+Deletion of employee with empno 101 is not allowed.
+Row deleted. Employee number: 101, Employee name: John Doe
+
+1 row(s) deleted.
+
+0.02 seconds
+</body>
+</html>

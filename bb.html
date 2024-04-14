@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataMasterHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DataMasterHub</h1>
+    </header>
+    <nav class="navbar">
+        <!-- Navbar buttons -->
+        <div class="dropdown" onclick="toggleSidebar('ddlCommandsSidebar')">
+            <button class="dropbtn">DDL COMMANDS</button>
+        </div>
+        <div class="dropdown" onclick="toggleSidebar('dmlCommandsSidebar')">
+            <button class="dropbtn">DML COMMANDS</button>
+        </div>
+        <div class="dropdown" onclick="toggleSidebar('dclCommandsSidebar')">
+            <button class="dropbtn">DCL COMMANDS</button>
+        </div>
+        <!-- Add more dropdown buttons as needed -->
+    </nav>
+
+    <!-- Sidebar for DDL COMMANDS -->
+    <div id="ddlCommandsSidebar" class="sidebar">
+        <div class="dropdown-content">
+            <!-- Links for DDL COMMANDS -->
+            <a href='create.html' target='iframe'>CREATE COMMAND</a>
+            <a href='altertable.html' target='iframe'>ALTER COMMAND</a>
+            <!-- Add other links for DDL COMMANDS -->
+        </div>
+    </div>
+    <!-- Repeat for other dropdown sidebars -->
+    <!-- ... -->
+
+    <!-- Iframe -->
+    <iframe name="iframe" id="iframe" src="pic.html"></iframe>
+
+    <script>
+        function toggleSidebar(sidebarId) {
+            var sidebar = document.getElementById(sidebarId);
+            sidebar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

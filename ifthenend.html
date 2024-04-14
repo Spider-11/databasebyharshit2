@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>IF THEN END IF</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+SET SERVEROUTPUT ON;
+DECLARE
+    num1 NUMBER := 10;
+    num2 NUMBER := 5;
+    result NUMBER;
+BEGIN
+    IF num1 > num2 THEN
+        result := num1 - num2;
+        DBMS_OUTPUT.PUT_LINE('num1 is greater than num2 by ' || result);
+    ELSE
+        result := num2 - num1;
+        DBMS_OUTPUT.PUT_LINE('num2 is greater than num1 by ' || result);
+    END IF;
+END;
+/
+<h3>Output</h3>
+num1 is greater than num2 by 5
+
+Statement processed.
+
+0.01 seconds
+
+</pre>
+
+
+</body>
+</html>

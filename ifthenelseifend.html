@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>IF THEN ELSEIF END IF</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+DECLARE
+    num NUMBER := 0;
+BEGIN
+    IF num > 0 THEN
+        DBMS_OUTPUT.PUT_LINE('The number is positive.');
+    ELSIF num < 0 THEN
+        DBMS_OUTPUT.PUT_LINE('The number is negative.');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('The number is zero.');
+    END IF; 
+END;
+
+/
+<h3>Output</h3>
+The number is zero.
+
+Statement processed.
+
+0.01 seconds
+
+</pre>
+
+
+</body>
+</html>

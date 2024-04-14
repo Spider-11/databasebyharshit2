@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>PREDEFINED EXCEPTION</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+DECLARE
+    v_emp_name emp.emp_name%TYPE;
+BEGIN
+    SELECT emp_name INTO v_emp_name FROM emp WHERE empno = 1000;
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_emp_name);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No employee found for empno 1000.');
+END;
+/
+
+
+<h3>Output</h3>
+No employee found for empno 1000.
+
+Statement processed.
+
+0.01 seconds
+
+</pre>
+
+
+</body>
+</html>

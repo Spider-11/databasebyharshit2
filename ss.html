@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <style>
+     body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    text-align: center;
+    background: url('https://s38063.pcdn.co/wp-content/uploads/2021/09/5dbms-trends-impacting-database-administration.jpg') center/cover no-repeat;
+    position: relative; /* Ensure positioning context for pseudo-element */
+}
+
+h2 {
+    color: white;
+    position: relative; /* Ensure positioning context for pseudo-element */
+    backdrop-filter: blur(px); /* Apply blur effect to the background */
+    padding: 20px; /* Add padding for better readability */
+    border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+}
+
+h2::before {
+    content: ''; /* Create a pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay color with 50% opacity */
+    z-index: -1; /* Ensure the overlay is behind the text */
+}
+
+p {
+    color: white;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Welcome to DATAMASTERHUB</h2>
+        <p>This is the default content displayed when the page loads. Please select a topic from the navigation menu to explore more.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>BEFORE update  TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+CREATE OR REPLACE TRIGGER before_update_trigger
+BEFORE UPDATE ON emplo
+FOR EACH ROW
+BEGIN
+    IF UPDATING('sal') THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Updates to salary are not allowed.');
+    END IF;
+END;
+/
+
+UPDATE emplo SET sal = sal * 1.1;
+<h3>Output</h3>
+
+ Updates to salary are not allowed.
+
+
+
+0.01 seconds</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>INSERTIN VALUES IN VIEW</h2>
+    </div>
+
+<pre>
+
+mysql> INSERT INTO v1 (empno, empname, job, mgr, hiredate, salary, deptno, age)
+    -> VALUES
+    ->     (1, 'John Doe', 'Manager', NULL, '2024-04-10', 60000, 10, 35),
+    ->     (2, 'Jane Smith', 'Developer', 1, '2024-04-10', 50000, 20, 30),
+    ->     (3, 'Michael Johnson', 'Analyst', 1, '2024-04-10', 55000, 10, 32),
+    ->     (4, 'Emily Brown', 'Designer', 1, '2024-04-10', 48000, 20, 28);
+Query OK, 4 rows affected (0.08 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+</pre>
+<pre>
+ 
+mysql> select * from v1;
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+| empno | empname         | job               | mgr  | hiredate   | salary | deptno | age  |
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+|     1 | John Doe        | Manager           | NULL | 2023-01-15 |   5000 |     10 |   35 |
+|     2 | Jane Smith      | Assistant Manager |    1 | 2023-02-20 |   4000 |     10 |   30 |
+|     1 | John Doe        | Manager           | NULL | 2024-04-10 |  60000 |     10 |   35 |
+|     3 | Michael Johnson | Analyst           |    1 | 2024-04-10 |  55000 |     10 |   32 |
++-------+-----------------+-------------------+------+------------+--------+--------+------+
+4 rows in set (0.00 sec)
+
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>EXPLICIT  CURSOR</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+DECLARE
+    -- Declare variables to store employee details
+    empno emp.empno%TYPE;
+    emp_name emp.emp_name%TYPE;
+    job emp.job%TYPE;
+    mgr emp.mgr%TYPE;
+    hiredate emp.hiredate%TYPE;
+    sal emp.sal%TYPE;
+    commission emp.commission%TYPE;
+    deptno emp.deptno%TYPE;
+
+    -- Declare the explicit cursor
+    CURSOR emp_cursor IS
+        SELECT empno, emp_name, job, mgr, hiredate, sal, commission, deptno
+        FROM emp;
+BEGIN
+    -- Open the cursor
+    OPEN emp_cursor;
+    
+    -- Fetch data from the cursor and process each row
+    LOOP
+        FETCH emp_cursor INTO empno, emp_name, job, mgr, hiredate, sal, commission, deptno;
+        EXIT WHEN emp_cursor%NOTFOUND; -- Exit the loop when no more rows are found
+        
+        -- Display employee details
+        DBMS_OUTPUT.PUT_LINE('Employee No: ' || empno || ', Name: ' || emp_name || ', Job: ' || job || ', Manager: ' || mgr || ', Hire Date: ' || hiredate || ', Salary: ' || sal || ', Commission: ' || commission || ', Dept No: ' || deptno);
+    END LOOP;
+    
+    -- Close the cursor
+    CLOSE emp_cursor;
+END;
+/
+
+
+
+<h3>Output</h3>
+Employee No: 5, Name: Eva Brown, Job: Analyst, Manager: 1, Hire Date: 03/01/2022, Salary: 3800, Commission: 150, Dept No: 1
+Employee No: 18, Name: Amelia Wilson, Job: Product Manager, Manager: 16, Hire Date: 03/03/2023, Salary: 5100, Commission: 800, Dept No: 1
+Employee No: 16, Name: Ella Martinez, Job: Marketing Manager, Manager: 11, Hire Date: 01/20/2023, Salary: 4700, Commission: 650, Dept No: 3
+Employee No: 7, Name: Sophia Wilson, Job: Developer, Manager: 4, Hire Date: 04/10/2022, Salary: 3400, Commission: 500, Dept No: 2
+Employee No: 8, Name: Ethan Johnson, Job: Analyst, Manager: 5, Hire Date: 05/15/2022, Salary: 4500, Commission: , Dept No: 1
+Employee No: 4, Name: Bob Williams, Job: Developer, Manager: 2, Hire Date: 02/15/2022, Salary: 3500, Commission: , Dept No: 2
+
+Statement processed.
+
+0.03 seconds
+
+</pre>
+
+
+</body>
+</html>

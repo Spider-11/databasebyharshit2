@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>CREATE TABLE</h2>
+    </div>
+<pre>
+mysql> CREATE TABLE employ (
+    ->     empno INT,
+    ->     empname VARCHAR(50),
+    ->     job VARCHAR(50),
+    ->     mgr INT,
+    ->     hiredate DATE,
+    ->     salary DECIMAL(10, 2),
+    ->     commission DECIMAL(10, 2),
+    ->     deptno INT
+    -> );
+Query OK, 0 rows affected (0.14 sec)
+</pre>
+<pre>
+mysql> desc employ;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| empno      | int           | YES  |     | NULL    |       |
+| empname    | varchar(50)   | YES  |     | NULL    |       |
+| job        | varchar(50)   | YES  |     | NULL    |       |
+| mgr        | int           | YES  |     | NULL    |       |
+| hiredate   | date          | YES  |     | NULL    |       |
+| salary     | decimal(10,2) | YES  |     | NULL    |       |
+| commission | decimal(10,2) | YES  |     | NULL    |       |
+| deptno     | int           | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+8 rows in set (0.09 sec)</pre>
+</body>
+</html>

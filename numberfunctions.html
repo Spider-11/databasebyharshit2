@@ -1,0 +1,98 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>NUMBER  FUNCTION</h2>
+    </div>
+<h3> CEIL FUNCTION</h3>
+<pre>
+
+mysql> select ceil(88.8) from dual;
+</pre>
+<pre>
++------------+
+| ceil(88.8) |
++------------+
+|         89 |
++------------+
+1 row in set (0.08 sec)
+
+
+</pre>
+<h3> POWER FUNCTION</h3>
+<pre>
+
+mysql> select power(5,3),power(5,0) from dual;
+</pre>
+<pre>
++------------+------------+
+| power(5,3) | power(5,0) |
++------------+------------+
+|        125 |          1 |
++------------+------------+
+1 row in set (0.08 sec)
+</pre>
+<h3>SIGN FUNCTION</h3>
+<pre>
+
+mysql> select sign(-3),sign(5),sign(0) from dual;
+</pre>
+<pre>
++----------+---------+---------+
+| sign(-3) | sign(5) | sign(0) |
++----------+---------+---------+
+|       -1 |       1 |       0 |
++----------+---------+---------+
+1 row in set (0.07 sec)
+</pre>
+<h3> SQRT FUNCTION</h3>
+<pre>
+
+mysql> select sqrt(25) , sqrt(69) from dual;
+</pre>
+<pre>
++----------+-------------------+
+| sqrt(25) | sqrt(69)          |
++----------+-------------------+
+|        5 | 8.306623862918075 |
++----------+-------------------+
+1 row in set (0.08 sec)\
+</pre>
+<h3>ABS</h3>
+<pre>
+
+mysql> select abs(-543) from dual;
++-----------+
+| abs(-543) |
++-----------+
+|       543 |
++-----------+
+1 row in set (0.08 sec)
+</pre>
+<h3>FLOOR</h3>
+<pre>
+
+mysql> select floor (88.7) from dual;
++--------------+
+| floor (88.7) |
++--------------+
+|           88 |
++--------------+
+1 row in set (0.00 sec)
+</pre>
+<h3>ROUND</h3>
+<pre>
+
+mysql> select round(98.5323,1) from dual;
++------------------+
+| round(98.5323,1) |
++------------------+
+|             98.5 |
++------------------+
+1 row in set (0.00 sec)
+</pre>
+</body>
+</html>

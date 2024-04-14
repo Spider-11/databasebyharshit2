@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>IS  OPERATOR</h2>
+    </div>
+
+<pre>
+
+
+mysql> select * from employees where mgr is not null;;
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+| empno | empname              | job                  | mgr  | hiredate   | salary | deptno | age  |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+|     2 | Jane Smith           | Assistant Manager    |    1 | 2023-02-20 |   4000 |     10 |   30 |
+|     3 | Michael Johnson      | Sales Representative |    2 | 2023-03-10 |   3000 |     20 |   28 |
+|     4 | Emily Brown          | Sales Representative |    2 | 2023-04-05 |   3000 |     20 |   27 |
+|     5 | William Wilson       | Clerk                |    2 | 2023-05-12 |   2000 |     30 |   25 |
+|     7 | Christopher Martinez | Analyst              |    1 | 2023-07-23 |   4000 |     40 |   32 |
+|     8 | Amanda Taylor        | Analyst              |    1 | 2023-08-30 |   3800 |     40 |   31 |
+|     9 | Olivia Thomas        | Clerk                |    6 | 2023-09-14 |   2100 |     30 |   27 |
+|    10 | Daniel Anderson      | Clerk                |    6 | 2023-10-05 |   3000 |     30 |   29 |
+|     2 | Jane Smith           | Developer            |    1 | 2024-04-10 |  50000 |     20 |   30 |
+|     3 | Michael Johnson      | Analyst              |    1 | 2024-04-10 |  55000 |     10 |   32 |
+|     4 | Emily Brown          | Designer             |    1 | 2024-04-10 |  48000 |     20 |   28 |
++-------+----------------------+----------------------+------+------------+--------+--------+------+
+11 rows in set (0.00 sec)
+
+ERROR:
+No query specified
+
+mysql> select * from employees where mgr is  null;;
++-------+----------+---------+------+------------+--------+--------+------+
+| empno | empname  | job     | mgr  | hiredate   | salary | deptno | age  |
++-------+----------+---------+------+------------+--------+--------+------+
+|     1 | John Doe | Manager | NULL | 2023-01-15 |  14000 |     10 |   35 |
+|     1 | John Doe | Manager | NULL | 2024-04-10 |  14000 |     10 |   35 |
++-------+----------+---------+------+------------+--------+--------+------+
+2 rows in set (0.00 sec)
+
+
+</body>
+</html>

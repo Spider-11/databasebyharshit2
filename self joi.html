@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>SELF join</h2>
+    </div>
+
+<pre>mysql> select e.name ,d.dname from emp e join dept d on e.deptno=d.deptno;
+
+</pre>
+<pre>
++------------------+-----------------+
+| name             | dname           |
++------------------+-----------------+
+| John Doe         | Finance         |
+| Jane Smith       | Marketing       |
+| Michael Johnson  | Human Resources |
+| Emily Brown      | Research        |
+| David Lee        | Finance         |
+| Sarah Clark      | Marketing       |
+| Kevin Rodriguez  | Human Resources |
+| Linda Martinez   | Research        |
+| Michael Williams | Finance         |
+| Emma Taylor      | Marketing       |
++------------------+-----------------+
+10 rows in set (0.00 sec)
+
+</pre>
+
+</body>
+</html>

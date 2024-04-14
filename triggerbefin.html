@@ -1,0 +1,45 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2>BEFORE INSERT  TRIGGER</h2>
+    </div>
+
+<pre>
+<h3> code</h3>
+SQL> SET SERVEROUTPUT ON;
+CREATE OR REPLACE TRIGGER before_insert_trigger
+BEFORE INSERT ON emplo
+FOR EACH ROW
+BEGIN
+    -- Accessing the new values being inserted
+    DBMS_OUTPUT.PUT_LINE('New employee number: ' || :NEW.empno);
+    DBMS_OUTPUT.PUT_LINE('New employee name: ' || :NEW.emp_name);
+    DBMS_OUTPUT.PUT_LINE('New salary: ' || :NEW.sal);
+
+    -- Example: Setting a default value if the salary is not provided
+    IF :NEW.sal IS NULL THEN
+        :NEW.sal := 0;
+    END IF;
+END;
+/
+
+INSERT INTO emplo (empno, emp_name, sal) VALUES (101, 'Alice', 5000);
+
+<h3>Output</h3>
+New employee number: 101
+New employee name: Alice
+New salary: 5000
+
+1 row(s) inserted.
+
+0.03 seconds
+
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="hello.css">
+</head>
+<body>
+<body>
+    <div class="container">
+        <h2> % TYPE OPERATOR</h2>
+    </div>
+
+<pre>
+
+declare
+        x student.roll%type;
+        y student.name%type;
+        begin
+        select roll,name into x,y from student where roll=1;
+        dbms_output.put_line(x ||' '|| y);
+        end;
+        
+    
+        Statement processed.
+        1 rahul
+</body>
+</html>
